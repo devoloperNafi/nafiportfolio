@@ -1,0 +1,222 @@
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* css variable */
+:root{
+    --headerHeight: 3rem;
+
+    /* =====color===== */
+
+    /* change favourite color */
+    --hueColor: 250;
+
+    /* HSL color */
+
+    --firstColor: hsl(var(--hueColor), 69%, 61%);
+    --firstColorSecond: hsl(var(--hueColor), 69%, 61%);
+    --firstColorAlt: hsl(var(--hueColor), 57%, 53%);
+    --firstColorLighter: hsl(var(--hueColor), 92%, 85%);
+    --titleColor: hsl(var(--hueColor), 8%, 15%);
+    --textColor: hsl(var(--hueColor), 8%, 45%);
+    --textColorLight: hsl(var(--hueColor), 8%, 65%);
+    --inputColor: hsl(var(--hueColor), 70%, 96%);
+    --bodyColor: hsl(var(--hueColor), 60%, 99%);
+    --containerColor: #fff;
+
+    /* font and typography */
+
+    --bodyFont: 'Poppins', sans-serif;
+
+    --bigFontSize: 2rem;
+    --h1FontSize: 1.5rem;
+    --h2FontSize: 1.25rem;
+    --h3FontSize: 1.125rem;
+    --normalFontSize: .938rem;
+    --smallFontSize: .812rem;
+    --smallerFontSize: .75rem;
+
+    /* font weight */
+    --fontMedium: 500;
+    --fontSemiBold: 600;
+    --fontBold: 700;
+
+    /* margin */
+
+    --margin025: .25rem;
+    --margin05: .5rem;
+    --margin075: .75rem;
+    --margin1: 1rem;
+    --margin1half: 1.5rem;
+    --margin2: 2rem;
+    --margin2half: 2.5rem;
+    --margin3: 3rem;
+
+    /* z-index */
+    --zTooltip: 10;
+    --zFixed: 100;
+    --zModel: 1000;
+}
+
+/* base */
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0 0 var(--headerHeight) 0;
+    font-family: var(--bodyFont);
+    font-size: var(--normalFontSize);
+    background: var(--bodyColor);
+    color: var(--textColor);
+}
+
+h1,h2,h3,h4{
+    color: var(--titleColor);
+    font-weight: var(--fontSemiBold);
+}
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+/* reusable css class */
+
+.section{
+    padding: 2rem 0 4rem;
+}
+.sectionTitle{
+    font-size: var(--h1FontSize);
+    text-align: center;
+}
+.sectionSubtitle{
+    font-size: var(--smallFontSize);
+    display: block;
+    margin-bottom: var(--margin3);
+    text-align: center;
+}
+
+
+/* layout */
+.container{
+    max-width: 768px;
+    margin-left: var(--margin1half);
+    margin-right: var(--margin1half);
+}
+
+.grid{
+    display: grid;
+    gap: 1.5rem;
+}
+
+.header{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: var(--zFixed);
+    background: var(--bodyColor);
+}
+
+/* nav */
+
+.nav{
+    max-width: 968px;
+    height: var(--headerHeight);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navLogo,
+.navToggle{
+    color: var(--titleColor);
+    font-weight: var(--fontMedium);
+    transition: .3s;
+}
+.navLogo:hover{
+    color: var(--firstColor);
+}
+.navToggle{
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+.navToggle:hover{
+    color: var(--firstColor);
+}
+.navList{
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+.navLink{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: var(--smallFontSize);
+    color: var(--titleColor);
+    font-weight: var(--fontMedium);
+}
+.navLink:hover{
+    color: var(--firstColor);
+}
+.navIcon{
+    font-size: 1.2rem;
+}
+.navClose{
+    position: absolute;
+    right: 1.3rem;
+    bottom: 0.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--firstColor);
+}
+.navClose:hover{
+    color: var(--firstColorAlt);
+}
+
+/* show menu */
+.showMenu{
+    bottom: 0 !important;
+}
+
+
+/* media query */
+
+@media screen and (min-width: 968px) {
+    :root{
+        --bigFontSize: 3rem;
+        --h1FontSize: 2.25rem;
+        --h2FontSize: 1.5rem;
+        --h3FontSize: 1.25rem;
+        --normalFontSize: 1rem;
+        --smallFontSize: .875rem;
+        --smallerFontSize: .813rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .navMenu{
+        position: fixed;
+        bottom: -100%;
+        left: 0;
+        width: 100%;
+        background: var(--bodyColor);
+        padding: 2rem 1.5rem 4rem;
+        box-shadow: 0 -1px 4px rgba(0, 0, 0, .15); 
+        border-radius: 1.5rem 1.5rem 0 0;
+        transition: .3s;
+    }
+}
