@@ -8,7 +8,7 @@
     /* =====color===== */
 
     /* change favourite color */
-    --hueColor: 250;
+    --hueColor: 14;
 
     /* HSL color */
 
@@ -97,7 +97,7 @@ img{
 /* reusable css class */
 
 .section{
-    padding: 2rem 0 4rem;
+    padding: 2rem 0 3.5rem;
 }
 .sectionTitle{
     font-size: var(--h1FontSize);
@@ -190,10 +190,131 @@ img{
 /* main part */
 
 /* home */
-.svgimage{
-    -webkit-mask-image: url(data:image/svg+xml;base64,PCEtLT94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/LS0+CiAgICAgICAgICAgICAgPHN2ZyBpZD0ic3ctanMtYmxvYi1zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSI+CiAgICAgICAgICAgICAgICAgICAgPGRlZnM+IAogICAgICAgICAgICAgICAgICAgICAgICA8bGluZWFyR3JhZGllbnQgaWQ9InN3LWdyYWRpZW50IiB4MT0iMCIgeDI9IjEiIHkxPSIxIiB5Mj0iMCI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8c3RvcCBpZD0ic3RvcDEiIHN0b3AtY29sb3I9InJnYmEoMjQ4LCAxMTcsIDU1LCAxKSIgb2Zmc2V0PSIwJSI+PC9zdG9wPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgPHN0b3AgaWQ9InN0b3AyIiBzdG9wLWNvbG9yPSJyZ2JhKDI1MSwgMTY4LCAzMSwgMSkiIG9mZnNldD0iMTAwJSI+PC9zdG9wPgogICAgICAgICAgICAgICAgICAgICAgICA8L2xpbmVhckdyYWRpZW50PgogICAgICAgICAgICAgICAgICAgIDwvZGVmcz4KICAgICAgICAgICAgICAgIDxwYXRoIGZpbGw9InVybCgjc3ctZ3JhZGllbnQpIiBkPSJNMjMuNywtMjYuMkMyOC44LC0xOC41LDMwLC05LjIsMzAuNCwwLjRDMzAuOCwxMC4xLDMwLjUsMjAuMSwyNS4zLDI1LjlDMjAuMSwzMS43LDEwLjEsMzMuMSwxLjQsMzEuN0MtNy4yLDMwLjIsLTE0LjQsMjUuOSwtMjEuOCwyMC4xQy0yOS4zLDE0LjQsLTM3LDcuMiwtMzguMSwtMS4xQy0zOS4zLC05LjUsLTMzLjgsLTE4LjksLTI2LjQsLTI2LjZDLTE4LjksLTM0LjMsLTkuNSwtNDAuMSwtMC4xLC00MEM5LjIsLTM5LjksMTguNSwtMzMuOCwyMy43LC0yNi4yWiIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTAgNTApIiBzdHJva2Utd2lkdGg9IjAiIHN0eWxlPSJ0cmFuc2l0aW9uOiBhbGwgMC4zcyBlYXNlIDBzOyI+PC9wYXRoPgogICAgICAgICAgICAgIDwvc3ZnPg==);
+.homeContainer{
+    gap: 1rem;
+}
+.homeContent{
+    grid-template-columns: .5fr 3fr;
+    padding-top: 3.5rem;
+    align-items: center;
+}
+.homeSocial{
+    display: grid;
+    grid-template-columns: max-content;
+    row-gap: 1rem;
+}
+.homeSocialIcon{
+    font-size: 1.25rem;
+    color: var(--firstColor);
+    transition: .3s;
+}
+.homeSocialIcon:hover{
+    color: var(--firstColorAlt);
+}
+.homeBlob{
+    width: 200px;
+    fill: var(--firstColor);
+}
+.homeBlobImg{
+    width: 200px;
+}
+.homeData{
+    grid-column: 1/3;
+}
+.homeTitle{
+    font-size: var(--bigFontSize);
+}
+.homeSubtitle{
+    font-size: var(--h3FontSize);
+    color: var(--textColor);
+    font-weight: var(--fontMedium);
+    margin-bottom: var(--margin075);
+}
+.homeDescription{
+    margin-bottom: var(--margin2);
+}
+.homeScroll{
+    /* display: none; */
+}
+.homeScrollBtn{
+    color: var(--firstColor);
+    transition: .3s;
+}
+.homeScrollBtn:hover{
+    transform: translateY(.25rem);
+}
+.homeScrollIcon{
+    font-size: 2rem;
+}
+.homeScrollName{
+    font-size: var(--smallFontSize);
+    color: var(--titleColor);
+    font-weight: var(--fontMedium);
+    margin-right: var(--margin025);
+}
+.homeScrollArrow{
+    font-size: 1.25rem;
 }
 
+
+/* Button */
+
+.button{
+    display: inline-block;
+    color: #fff;
+    background-color: var(--firstColor);
+    padding: 1rem;
+    border-radius: .5rem;
+    font-weight: var(--fontMedium);
+    transition: .3s;
+}
+.button:hover{
+    background-color: var(--firstColorAlt);
+}
+.buttonIcon{
+    font-size: 1.25rem;
+    margin-left: var(--margin05);
+    transition: .3s;
+}
+.buttonFlex{
+    display: inline-flex;
+    align-items: center;
+}
+
+/* about */
+
+.aboutImg{
+    width: 200px;
+    border-radius: .5rem;
+    justify-self: center;
+    align-self: center;
+}
+.aboutDescription{
+    text-align: center;
+    margin-bottom: var(--margin2half);
+}
+.aboutInfo{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: var(--margin2half);
+}
+.aboutInfoTitle{
+    font-size: var(--h2FontSize);
+    font-weight: var(--fontSemiBold);
+    color: var(--titleColor);
+}
+.aboutInfoName{
+    font-size: var(--smallFontSize);
+}
+.aboutInfoTitle,
+.aboutInfoName{
+    display: block;
+    text-align: center;
+}
+.aboutButton{
+    display: flex;
+    justify-content: center;
+}
 /* show menu */
 .showMenu{
     bottom: 0 !important;
