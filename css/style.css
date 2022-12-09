@@ -109,7 +109,41 @@ img{
     margin-bottom: var(--margin3);
     text-align: center;
 }
+/* Button */
 
+.button{
+    display: inline-block;
+    color: #fff;
+    background-color: var(--firstColor);
+    padding: 1rem;
+    border-radius: .5rem;
+    font-weight: var(--fontMedium);
+    transition: .3s;
+}
+.button:hover{
+    background-color: var(--firstColorAlt);
+}
+.buttonIcon{
+    font-size: 1.25rem;
+    margin-left: var(--margin05);
+    transition: .3s;
+}
+.buttonFlex{
+    display: inline-flex;
+    align-items: center;
+}
+.buttonSmall{
+    padding: .75rem 1rem;
+}
+.buttonLink{
+    padding: 0;
+    background-color: transparent;
+    color: var(--firstColor);
+}
+.buttonLink:hover{
+    background-color: transparent;
+    color: var(--firstColorAlt);
+}
 
 /* layout */
 .container{
@@ -257,29 +291,6 @@ img{
 }
 
 
-/* Button */
-
-.button{
-    display: inline-block;
-    color: #fff;
-    background-color: var(--firstColor);
-    padding: 1rem;
-    border-radius: .5rem;
-    font-weight: var(--fontMedium);
-    transition: .3s;
-}
-.button:hover{
-    background-color: var(--firstColorAlt);
-}
-.buttonIcon{
-    font-size: 1.25rem;
-    margin-left: var(--margin05);
-    transition: .3s;
-}
-.buttonFlex{
-    display: inline-flex;
-    align-items: center;
-}
 
 /* about */
 
@@ -314,6 +325,263 @@ img{
 .aboutButton{
     display: flex;
     justify-content: center;
+}
+
+/* SKill */
+
+.skillContainer{
+    row-gap: 0;
+}
+.skillHeader{
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--margin2half);
+    cursor: pointer;
+    padding: 5px;
+    transition: .4s;
+}
+.skillIcon,
+.skillArrow{
+    font-size: 2rem;
+    color: var(--firstColor);
+}
+.skillIcon{
+    margin-right: var(--margin075);
+}
+.skillTitle{
+    font-size: var(--h3FontSize);
+}
+.skillSubtitle{
+    font-size: var(--smallFontSize);
+    color: var(--textColorLight);
+}
+.skillArrow{
+    margin-left: auto;
+    transition: .4s;
+}
+.skillTitles{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--margin05);
+}
+.skillName{
+    font-size: var(--normalFontSize);
+    font-weight: var(--fontMedium);
+}
+.skillBar,
+.skillPercent{
+    height: 5px;
+    border-radius: .25rem;
+}
+.skillBar{
+    background-color: var(--firstColorLighter);
+}
+.skillPercent{
+    display: block;
+    background-color: var(--firstColor);
+}
+.skillAdSetup{
+    width: 90%;
+}
+.skillAnalytics{
+    width: 70%;
+}
+.skillTag{
+    width: 85%;
+}
+.skillMarchent{
+    width: 65%;
+}
+.skillFbAdSetup{
+    width: 95%;
+}
+.skillFbMarketplace{
+    width: 75%;
+}
+.skillFbManagement{
+    width: 90%;
+}
+.skillWPC{
+    width: 80%;
+}
+.skillConvertWP{
+    width: 75%;
+}
+.skillHTML{
+    width: 95%;
+}
+.skillCSS{
+    width: 85%;
+}
+.skillJS{
+    width: 65%;
+}
+.skillReact{
+    width: 60%;
+}
+.skillClose .skillList{
+    height: 0;
+    overflow: hidden;
+}
+.skillOpen .skillList{
+    height: max-content;
+    margin-bottom: var(--margin2half);
+}
+.skillOpen .skillArrow{
+    transform: rotate(-180deg);
+}
+.skillContent{
+    border-radius: 10px;
+    margin-bottom: var(--margin025);
+}
+.skillHeader:hover{
+    background-color: rgb(250, 255, 206)
+}
+
+/* Qualification */
+
+.qualificationTabs{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: var(--margin2);
+}
+.qualificationBtn{
+    font-size: var(--h3FontSize);
+    font-weight: var(--fontMedium);
+    cursor: pointer;
+}
+.qualificationBtn:hover{
+    color: var(--firstColor);
+}
+.qualificationIcon{
+    font-size: 1.8rem;
+    margin-right: var(--margin025);
+}
+.qualificationData{
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    column-gap: 1.5rem;
+}
+.qualificationTitle{
+    font-size: var(--normalFontSize);
+    font-weight: var(--fontMedium);
+}
+.qualificationSubtitle{
+    display: inline-block;
+    font-size: var(--smallFontSize);
+    margin-bottom: var(--margin075);
+}
+.qualificationCalender{
+    font-size: var(--smallerFontSize);
+    color: var(--textColorLight);
+}
+.qualificationRounder{
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: var(--firstColor);
+}
+.qualificationLine{
+    display: block;
+    width: 1px;
+    height: 100%;
+    background-color: var(--firstColor);
+    transform: translate(6px, -7px);
+}
+.qualification [data-content]{
+    display: none;
+}
+.qualificationActive[data-content]{
+    display: block;
+}
+
+
+/* service */
+.serviceContainer{
+    gap: 1.5rem;
+    grid-template-columns: repeat(2,1fr);
+}
+.serviceContent{
+    position: relative;
+    background-color: var(--containerColor);
+    padding: 3.25rem .5rem 1.25rem 1.5rem;
+    border-radius: .25rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .15);
+    transition: .3s;
+}
+.serviceContent:hover{
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.15);
+}
+.serviceIcon{
+    display: block;
+    font-size: 1.5rem;
+    color: var(--firstColor);
+    margin-bottom: var(--margin1);
+}
+.serviceTitle{
+    font-size: var(--h3FontSize);
+    font-weight: var(--fontMedium);
+    margin-bottom: var(--margin1);
+}
+.serviceButton{
+    cursor: pointer;
+    font-size: var(--smallFontSize);
+}
+.serviceButtonIcon{
+    transition: .3s;
+}
+.serviceButton:hover .serviceButtonIcon{
+    transform: translateX(.25rem);
+}
+.serviceModal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    z-index: var(--zModel);
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+}
+.serviceModalContent{
+    position: relative;
+    background-color: var(--containerColor);
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
+.serviceModalServices{
+    row-gap: 1rem;
+}
+.serviceModalList{
+    display: flex;
+}
+.serviceModalTitle{
+    font-size: var(--h3FontSize);
+    font-weight: var(--fontMedium);
+    margin-bottom: var(--margin1half);
+}
+.serviceModalClose{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: var(--firstColor);
+    cursor: pointer;
+}
+.serviceModalIcon{
+    color: var(--firstColor);
+    margin-right: var(--margin05);
+}
+.activeModal{
+    opacity: 1;
+    visibility: visible;
 }
 /* show menu */
 .showMenu{

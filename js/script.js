@@ -29,3 +29,71 @@ function linkAction(){
     navMenu.classList.remove('showMenu')
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
+
+
+
+// Accordion Skill
+
+
+const skill_content = document.getElementsByClassName('skillContent'),
+    skill_header = document.querySelectorAll('.skillHeader');
+
+function toggleSkill(){
+    let itemClass = this.parentNode.className;
+
+    for(i = 0; i < skill_content.length; i++){
+        skill_content[i].className = 'skillContent skillClose'
+    }
+    if(itemClass === 'skillContent skillClose'){
+        this.parentNode.className = 'skillContent skillOpen'
+    }
+}
+skill_header.forEach((el) =>{
+    el.addEventListener('click', toggleSkill)
+})
+
+
+// Qualification Tabs
+
+const tabs = document.querySelectorAll('[data-Target]'),
+      tabContents = document.querySelectorAll('[data-content]');
+
+tabs.forEach(tab =>{
+    tab.addEventListener('click', () =>{
+        const target = document.querySelector(tab.dataset.target)
+        tabContents.forEach(tabContent =>{
+            tabContent.classList.remove('qualificationActive')
+        })
+        target.classList.add('qualificationActive')
+        tabs.forEach(tab =>{
+            tab.classList.remove('qualificationActive')
+        })
+        tab.classList.add('qualificationActive')
+    })
+})     
+
+
+
+// service modal
+
+
+const modalViews = document.querySelectorAll('.serviceModal'),
+      modalBtns = document.querySelectorAll('.serviceButton'),
+      modalCloses = document.querySelectorAll('.serviceModalClose');
+
+let modal = function(modalClick){
+    modalViews[modalClick].classList.add('activeModal')
+}  
+
+modalBtns.forEach((modalBtn, i) =>{
+    modalBtn.addEventListener('click', () =>{
+        modal(i);
+    })
+})
+modalCloses.forEach((modalClose) =>{
+    modalClose.addEventListener('click', () =>{
+        modalViews.forEach((modalview) =>{
+            modalview.classList.remove('activeModal')
+        })
+    })
+})
